@@ -6,33 +6,32 @@
     Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Konum Ekle</h2>
 
-<h4>Konum</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Konum.Konum1" class="control-label"></label>
+                <label asp-for="Konum.Konum1" class="control-label">Konum Ad</label>
                 <input asp-for="Konum.Konum1" class="form-control" />
                 <span asp-validation-for="Konum.Konum1" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Konum.UstKonumId" class="control-label"></label>
+                <label asp-for="Konum.UstKonumId" class="control-label">Üst Konum</label>
                 <select asp-for="Konum.UstKonumId" class ="form-control" asp-items="ViewBag.UstKonumId">
                     <option selected="selected">Istediginiz bir tanesini seciniz</option>
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Ekle" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Geri Dön</a>
 </div>
 

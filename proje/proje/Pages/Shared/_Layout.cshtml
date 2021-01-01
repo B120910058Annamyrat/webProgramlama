@@ -34,29 +34,29 @@
 <body>
     <div id="fh5co-wrapper">
         <div id="fh5co-page">
-
-            <header id="fh5co-header-section" class="sticky-banner">
-                <div class="container">
-                    <div class="nav-header">
-                        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-                        <h1 id="fh5co-logo"><a href="#"><i class="icon-airplane"></i>SeferTM</a></h1>
-                        <!-- START #fh5co-menu-wrap -->
-                        <nav id="fh5co-menu-wrap" role="navigation">
-                            <ul class="sf-menu" id="fh5co-primary-menu">
-                                <li class="active"><a href="#">Ana Sayfa</a></li>
-                                <li><a href="#">Uçuşlar</a></li>
-                                <li><a href="#">Oteller</a></li>
-                                <li><a href="#">Iletişim</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#myModal1">Kaydol veya Giriş Yap</a></li>
-                                @*<li>
-                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1"> Launch demo modal</button>
-                                    </li>*@
-                            </ul>
-                        </nav>
+            <div class="sticky-wrapper" style="height:95px;">
+                <header id="fh5co-header-section" class="sticky-banner">
+                    <div class="container">
+                        <div class="nav-header">
+                            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+                            <h1 id="fh5co-logo"><a href="#"><i class="icon-airplane"></i>SeferTM</a></h1>
+                            <!-- START #fh5co-menu-wrap -->
+                            <nav id="fh5co-menu-wrap" role="navigation">
+                                <ul class="sf-menu" id="fh5co-primary-menu">
+                                    <li class="active"><a href="#">Ana Sayfa</a></li>
+                                    <li><a href="#">Uçuşlar</a></li>
+                                    <li><a href="#">Oteller</a></li>
+                                    <li><a href="#">Iletişim</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#myModal1">Kaydol veya Giriş Yap</a></li>
+                                    @*<li>
+                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1"> Launch demo modal</button>
+                            </li>*@
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                </div>
-            </header>
-
+                </header>
+            </div>
             <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <partial name="~/Pages/_PartialLoginPage.cshtml" />

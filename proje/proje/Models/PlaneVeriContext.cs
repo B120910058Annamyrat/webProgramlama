@@ -20,10 +20,10 @@ namespace proje.Models
         public virtual DbSet<Bilet> Bilets { get; set; }
         public virtual DbSet<Havalimanlari> Havalimanlaris { get; set; }
         public virtual DbSet<IletisimBilgileri> IletisimBilgileris { get; set; }
-        public virtual DbSet<Konum> Konums { get; set; }
+        public virtual DbSet<Konum> Konumis { get; set; }
         public virtual DbSet<Kullanici> Kullanicis { get; set; }
         public virtual DbSet<Sefer> Sefers { get; set; }
-        public virtual DbSet<Ucaklar> Ucaklars { get; set; }
+        public virtual DbSet<Ucaklar> Ucaklaris { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -165,6 +165,19 @@ namespace proje.Models
                     .HasColumnName("kalkisYeri");
 
                 entity.Property(e => e.SeferTarihi).HasColumnType("datetime");
+
+
+                entity.HasOne(d => d.Konum)
+                       .WithMany(p => p.Sefers)
+                       .HasForeignKey(d => d.InisYeri)
+                       .OnDelete(DeleteBehavior.ClientSetNull)
+                       .HasConstraintName("FK_Sefer_Konum1");
+                
+                entity.HasOne(d => d.Konum)
+                       .WithMany(p => p.Sefers)
+                       .HasForeignKey(d => d.KalkisYeri)
+                       .OnDelete(DeleteBehavior.ClientSetNull)
+                       .HasConstraintName("FK_Sefer_Konum");
 
                 entity.HasOne(d => d.Havaliman)
                     .WithMany(p => p.Sefers)

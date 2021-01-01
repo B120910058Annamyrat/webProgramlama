@@ -29,14 +29,14 @@ namespace proje.Areas.Admin.Pages.Konumlar
                 return NotFound();
             }
 
-            Konum = await _context.Konums
+            Konum = await _context.Konumis
                 .Include(k => k.UstKonum).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Konum == null)
             {
                 return NotFound();
             }
-           ViewData["UstKonumId"] = new SelectList(_context.Konums, "Id", "Konum1");
+           ViewData["UstKonumId"] = new SelectList(_context.Konumis, "Id", "Konum1");
             return Page();
         }
 
@@ -70,7 +70,7 @@ namespace proje.Areas.Admin.Pages.Konumlar
 
         private bool KonumExists(int id)
         {
-            return _context.Konums.Any(e => e.Id == id);
+            return _context.Konumis.Any(e => e.Id == id);
         }
     }
 }

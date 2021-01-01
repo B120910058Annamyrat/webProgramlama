@@ -13,8 +13,8 @@ namespace proje.Models
         }
 
         public int Id { get; set; }
-        public int Ad { get; set; }
-        public byte KoltukSayisi { get; set; }
+        public string Ad { get; set; }
+        public int KoltukSayisi { get; set; }
 
         public virtual ICollection<Sefer> Sefers { get; set; }
     }

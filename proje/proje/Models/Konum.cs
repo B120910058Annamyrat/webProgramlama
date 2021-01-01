@@ -19,6 +19,7 @@ namespace proje.Models
 
         public virtual Konum UstKonum { get; set; }
         public virtual ICollection<Havalimanlari> Havalimanlaris { get; set; }
+        public virtual ICollection<Sefer> Sefers { get; set; }
         public virtual ICollection<Konum> InverseUstKonum { get; set; }
     }
 }

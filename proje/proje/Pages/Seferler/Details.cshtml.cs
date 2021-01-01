@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Pages.ius
+namespace proje.Pages.Seferler
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace proje.Pages.ius
             _context = context;
         }
 
-        public Kullanici Kullanici { get; set; }
+        public Sefer Sefer { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,9 +27,11 @@ namespace proje.Pages.ius
                 return NotFound();
             }
 
-            Kullanici = await _context.Kullanicis.FirstOrDefaultAsync(m => m.Id == id);
+            Sefer = await _context.Sefers
+                .Include(s => s.Havaliman)
+                .Include(s => s.Ucak).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Kullanici == null)
+            if (Sefer == null)
             {
                 return NotFound();
             }

@@ -1,0 +1,58 @@
+﻿@page
+@model proje.Pages.Seferler.EditModel
+
+@{
+    ViewData["Title"] = "Sefer Güncelle";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Sefer Güncelle</h2>
+
+<h4>Sefer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Sefer.Id" />
+            <div class="form-group">
+                <label asp-for="Sefer.KalkisYeri" class="control-label">Kalkış Yeri</label>
+                <input asp-for="Sefer.KalkisYeri" class="form-control" />
+                <span asp-validation-for="Sefer.KalkisYeri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sefer.InisYeri" class="control-label">İniş Yeri</label>
+                <input asp-for="Sefer.InisYeri" class="form-control" />
+                <span asp-validation-for="Sefer.InisYeri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sefer.SeferTarihi" class="control-label"> Sefer Tarihi</label>
+                <input asp-for="Sefer.SeferTarihi" class="form-control" />
+                <span asp-validation-for="Sefer.SeferTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sefer.UcakId" class="control-label"></label>
+                <select asp-for="Sefer.UcakId" class="form-control" asp-items="ViewBag.UcakId"></select>
+                <span asp-validation-for="Sefer.UcakId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sefer.YolcuSayisi" class="control-label"></label>
+                <input asp-for="Sefer.YolcuSayisi" class="form-control" />
+                <span asp-validation-for="Sefer.YolcuSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sefer.HavalimanId" class="control-label"></label>
+                <select asp-for="Sefer.HavalimanId" class="form-control" asp-items="ViewBag.HavalimanId"></select>
+                <span asp-validation-for="Sefer.HavalimanId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kayıt" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Geri Dön</a>
+</div>
+

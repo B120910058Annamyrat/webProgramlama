@@ -1,0 +1,32 @@
+﻿@page
+@model proje.Pages.Havalimanlar.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Havaliman Detayı</h2>
+
+<div>
+    <h4>Havalimanlari</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Havaliman Adı
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Havalimanlari.Ad)
+        </dd>
+        <dt>
+            Havaliman Konumu
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Havalimanlari.Konum.Konum1)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Havalimanlari.Id">Güncelle</a> |
+    <a asp-page="./Index">Geri dön</a>
+</div>

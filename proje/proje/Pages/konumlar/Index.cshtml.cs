@@ -22,7 +22,7 @@ namespace proje.Areas.Admin.Pages.Konumlar
 
         public async Task OnGetAsync()
         {
-            Konum = await _context.Konums
+            Konum = await _context.Konumis
                 .Include(k => k.UstKonum).ToListAsync();
         }
     }

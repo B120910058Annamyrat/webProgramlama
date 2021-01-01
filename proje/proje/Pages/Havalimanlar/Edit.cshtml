@@ -1,0 +1,37 @@
+﻿@page
+@model proje.Pages.Havalimanlar.EditModel
+
+@{
+    ViewData["Title"] = "Havaliman Güncelle";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Havaliman Güncelle</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Havalimanlari.Id" />
+            <div class="form-group">
+                <label asp-for="Havalimanlari.Ad" class="control-label">Havaliman Adı</label>
+                <input asp-for="Havalimanlari.Ad" class="form-control" />
+                <span asp-validation-for="Havalimanlari.Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Havalimanlari.KonumId" class="control-label">Havaliman Konumu</label>
+                <select asp-for="Havalimanlari.KonumId" class="form-control" asp-items="ViewBag.KonumId"></select>
+                <span asp-validation-for="Havalimanlari.KonumId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kayıt" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Güncelle</a>
+</div>
+

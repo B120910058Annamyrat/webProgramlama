@@ -1,0 +1,71 @@
+﻿@page
+@model proje.Pages.Seferler.IndexModel
+
+@{
+    ViewData["Title"] = "Seferler";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row page-titles mx-0">
+        <div class="col-sm-6 p-md-0">
+            <div class="welcome-text">
+                <h4>Hos geldin</h4>
+            </div>
+        </div>
+        <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Admin" asp-page="/Index">Ana Sayfa</a></li>
+                <li class="breadcrumb-item active"><a href="/seferler/Index">@ViewData["Title"]</a></li>
+                <li class="breadcrumb-item"><a asp-page="./Create" style="position:absolute;right:0;">Sefer Ekle</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0 table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sefer Tarihi</th>
+                                    <th>Kalkış Yeri</th>
+                                    <th>İniş Yeri</th>
+                                    <th>Havaliman Adı</th>
+                                    <th>Uçak Adı</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="customers">
+                                @foreach (var item in Model.Sefer)
+                                {
+                                    <tr class="btn-reveal-trigger">
+                                        <td class="py-3">
+                                            @Html.DisplayFor(modelItem => item.SeferTarihi)
+                                        </td>
+                                        <td class="py-2">@item.KalkisYeri</td>
+                                        <td class="py-3">@item.InisYeri</td>
+                                        <td class="py-3">
+                                            @Html.DisplayFor(modelItem => item.Havaliman.Ad)
+                                        </td>
+                                        <td class="py-2">  @Html.DisplayFor(modelItem => item.Ucak.Ad)</td>
+
+                                        <td class="py-2 text-right">
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary tp-btn-light sharp" type="button" data-toggle="dropdown"><span class="fs--1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg></span></button>
+                                                <div class="dropdown-menu dropdown-menu-right border py-0">
+                                                    <div class="py-2"><a class="dropdown-item" asp-page="./Edit" asp-route-id="@item.Id">Guncelle</a><a class="dropdown-item text-danger" asp-page="./Details" asp-route-id="@item.Id">Detay</a><a class="dropdown-item text-danger" asp-page="./Delete" asp-route-id="@item.Id">Sil</a></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

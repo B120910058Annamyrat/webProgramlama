@@ -6,9 +6,8 @@
     Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Konum Güncelle</h2>
 
-<h4>Konum</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,23 +15,25 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Konum.Id" />
             <div class="form-group">
-                <label asp-for="Konum.Konum1" class="control-label"></label>
+                <label asp-for="Konum.Konum1" class="control-label">Konum Adı</label>
                 <input asp-for="Konum.Konum1" class="form-control" />
                 <span asp-validation-for="Konum.Konum1" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Konum.UstKonumId" class="control-label"></label>
-                <select asp-for="Konum.UstKonumId" class="form-control" asp-items="ViewBag.UstKonumId"></select>
+                <label asp-for="Konum.UstKonumId" class="control-label">Üst Konum</label>
+                <select asp-for="Konum.UstKonumId" class="form-control" asp-items="ViewBag.UstKonumId">
+                    <option selected="selected">Istediginiz bir tanesini seciniz</option>
+                </select>
                 <span asp-validation-for="Konum.UstKonumId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Kayıt" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Geri Dön</a>
 </div>
 

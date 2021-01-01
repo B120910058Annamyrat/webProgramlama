@@ -1,0 +1,35 @@
+﻿@page
+@model proje.Pages.Havalimanlar.CreateModel
+
+@{
+    ViewData["Title"] = "Havaliman Ekle";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Havaliman Ekle</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Havalimanlari.Ad" class="control-label">Havaliman Ad</label>
+                <input asp-for="Havalimanlari.Ad" class="form-control" />
+                <span asp-validation-for="Havalimanlari.Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Havalimanlari.KonumId" class="control-label"> Havaliman Konym</label>
+                <select asp-for="Havalimanlari.KonumId" class ="form-control" asp-items="ViewBag.KonumId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Geri Dön</a>
+</div>
+

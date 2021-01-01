@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Areas.Admin.Pages.Konumlar
+namespace proje.Pages.Havalimanlar
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace proje.Areas.Admin.Pages.Konumlar
             _context = context;
         }
 
-        public Konum Konum { get; set; }
+        public Havalimanlari Havalimanlari { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,10 +27,10 @@ namespace proje.Areas.Admin.Pages.Konumlar
                 return NotFound();
             }
 
-            Konum = await _context.Konums
-                .Include(k => k.UstKonum).FirstOrDefaultAsync(m => m.Id == id);
+            Havalimanlari = await _context.Havalimanlaris
+                .Include(h => h.Konum).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Konum == null)
+            if (Havalimanlari == null)
             {
                 return NotFound();
             }

@@ -189,15 +189,13 @@ namespace proje.Migrations
                     b.Property<int>("HavalimanId")
                         .HasColumnType("int");
 
-                    b.Property<string>("InisYeri")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)")
+                    b.Property<int>("InisYeri")
+                        .HasColumnType("int")
                         .HasMaxLength(20);
 
-                    b.Property<string>("KalkisYeri")
-                        .IsRequired()
+                    b.Property<int>("KalkisYeri")
                         .HasColumnName("kalkisYeri")
-                        .HasColumnType("nvarchar(20)")
+                        .HasColumnType("int")
                         .HasMaxLength(20);
 
                     b.Property<DateTime>("SeferTarihi")
@@ -213,6 +211,8 @@ namespace proje.Migrations
 
                     b.HasIndex("HavalimanId");
 
+                    b.HasIndex("KalkisYeri");
+
                     b.HasIndex("UcakId");
 
                     b.ToTable("Sefer");
@@ -225,11 +225,11 @@ namespace proje.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Ad")
-                        .HasColumnType("int");
+                    b.Property<string>("Ad")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte>("KoltukSayisi")
-                        .HasColumnType("tinyint");
+                    b.Property<int>("KoltukSayisi")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -274,6 +274,12 @@ namespace proje.Migrations
                         .WithMany("Sefers")
                         .HasForeignKey("HavalimanId")
                         .HasConstraintName("FK_Sefer_Havalimanlari")
+                        .IsRequired();
+
+                    b.HasOne("proje.Models.Konum", "Konum")
+                        .WithMany("Sefers")
+                        .HasForeignKey("KalkisYeri")
+                        .HasConstraintName("FK_Sefer_Konum")
                         .IsRequired();
 
                     b.HasOne("proje.Models.Ucaklar", "Ucak")

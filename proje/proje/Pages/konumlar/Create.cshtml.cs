@@ -20,7 +20,7 @@ namespace proje.Areas.Admin.Pages.Konumlar
 
         public IActionResult OnGet()
         {
-        ViewData["UstKonumId"] = new SelectList(_context.Konums, "Id", "Konum1");
+        ViewData["UstKonumId"] = new SelectList(_context.Konumis, "Id", "Konum1");
             return Page();
         }
 
@@ -36,7 +36,7 @@ namespace proje.Areas.Admin.Pages.Konumlar
                 return Page();
             }
 
-            _context.Konums.Add(Konum);
+            _context.Konumis.Add(Konum);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

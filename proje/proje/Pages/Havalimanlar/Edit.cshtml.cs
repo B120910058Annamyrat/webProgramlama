@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Pages.ius
+namespace proje.Pages.Havalimanlar
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace proje.Pages.ius
         }
 
         [BindProperty]
-        public Kullanici Kullanici { get; set; }
+        public Havalimanlari Havalimanlari { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,12 +29,14 @@ namespace proje.Pages.ius
                 return NotFound();
             }
 
-            Kullanici = await _context.Kullanicis.FirstOrDefaultAsync(m => m.Id == id);
+            Havalimanlari = await _context.Havalimanlaris
+                .Include(h => h.Konum).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Kullanici == null)
+            if (Havalimanlari == null)
             {
                 return NotFound();
             }
+           ViewData["KonumId"] = new SelectList(_context.Konumis, "Id", "Konum1");
             return Page();
         }
 
@@ -45,7 +47,7 @@ namespace proje.Pages.ius
                 return Page();
             }
 
-            _context.Attach(Kullanici).State = EntityState.Modified;
+            _context.Attach(Havalimanlari).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +55,7 @@ namespace proje.Pages.ius
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!KullaniciExists(Kullanici.Id))
+                if (!HavalimanlariExists(Havalimanlari.Id))
                 {
                     return NotFound();
                 }
@@ -66,9 +68,9 @@ namespace proje.Pages.ius
             return RedirectToPage("./Index");
         }
 
-        private bool KullaniciExists(int id)
+        private bool HavalimanlariExists(int id)
         {
-            return _context.Kullanicis.Any(e => e.Id == id);
+            return _context.Havalimanlaris.Any(e => e.Id == id);
         }
     }
 }

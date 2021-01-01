@@ -28,7 +28,7 @@ namespace proje.Areas.Admin.Pages.Konumlar
                 return NotFound();
             }
 
-            Konum = await _context.Konums
+            Konum = await _context.Konumis
                 .Include(k => k.UstKonum).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Konum == null)
@@ -45,11 +45,11 @@ namespace proje.Areas.Admin.Pages.Konumlar
                 return NotFound();
             }
 
-            Konum = await _context.Konums.FindAsync(id);
+            Konum = await _context.Konumis.FindAsync(id);
 
             if (Konum != null)
             {
-                _context.Konums.Remove(Konum);
+                _context.Konumis.Remove(Konum);
                 await _context.SaveChangesAsync();
             }
 

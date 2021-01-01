@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Pages.ius
+namespace proje.Pages.Havalimanlar
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace proje.Pages.ius
         }
 
         [BindProperty]
-        public Kullanici Kullanici { get; set; }
+        public Havalimanlari Havalimanlari { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,10 @@ namespace proje.Pages.ius
                 return NotFound();
             }
 
-            Kullanici = await _context.Kullanicis.FirstOrDefaultAsync(m => m.Id == id);
+            Havalimanlari = await _context.Havalimanlaris
+                .Include(h => h.Konum).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Kullanici == null)
+            if (Havalimanlari == null)
             {
                 return NotFound();
             }
@@ -44,11 +45,11 @@ namespace proje.Pages.ius
                 return NotFound();
             }
 
-            Kullanici = await _context.Kullanicis.FindAsync(id);
+            Havalimanlari = await _context.Havalimanlaris.FindAsync(id);
 
-            if (Kullanici != null)
+            if (Havalimanlari != null)
             {
-                _context.Kullanicis.Remove(Kullanici);
+                _context.Havalimanlaris.Remove(Havalimanlari);
                 await _context.SaveChangesAsync();
             }
 

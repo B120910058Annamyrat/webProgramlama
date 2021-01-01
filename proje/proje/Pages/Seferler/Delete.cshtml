@@ -1,0 +1,58 @@
+﻿@page
+@model proje.Pages.Seferler.DeleteModel
+
+@{
+    ViewData["Title"] = "Sefer sil";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Seferler sil</h2>
+
+<h3>seferi silmek istediğiize eminmisiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sefer.KalkisYeri)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sefer.KalkisYeri)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sefer.InisYeri)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sefer.InisYeri)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sefer.SeferTarihi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sefer.SeferTarihi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sefer.YolcuSayisi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sefer.YolcuSayisi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sefer.Havaliman)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sefer.Havaliman.Ad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sefer.Ucak)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sefer.Ucak.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Sefer.Id" />
+        <input type="submit" value="Sil" class="btn btn-default" /> |
+        <a asp-page="./Index">Geri Dön</a>
+    </form>
+</div>

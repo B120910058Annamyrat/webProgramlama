@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using proje.Models;
 
-namespace proje.Pages.ius
+namespace proje.Pages.Seferler
 {
     public class CreateModel : PageModel
     {
@@ -20,11 +20,16 @@ namespace proje.Pages.ius
 
         public IActionResult OnGet()
         {
+            var havaId= new SelectList(_context.Havalimanlaris, "Id", "Ad");
+            ViewData["HavalimanId"] = havaId;
+            var konumlar = new SelectList(_context.Konumis, "Id", "Konum1");
+            ViewData["KonumId"] = konumlar;
+            ViewData["UcakId"] = new SelectList(_context.Ucaklaris, "Id", "Ad");
             return Page();
         }
 
         [BindProperty]
-        public Kullanici Kullanici { get; set; }
+        public Sefer Sefer { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -35,7 +40,7 @@ namespace proje.Pages.ius
                 return Page();
             }
 
-            _context.Kullanicis.Add(Kullanici);
+            _context.Sefers.Add(Sefer);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

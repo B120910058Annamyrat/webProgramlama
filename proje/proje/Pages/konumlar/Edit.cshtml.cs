@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Pages.konumlar
+namespace proje.Areas.Admin.Pages.Konumlar
 {
     public class EditModel : PageModel
     {

@@ -1,0 +1,85 @@
+﻿@page
+@model proje.Areas.Admin.Pages.User.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].TelNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].DogumTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].KimlikNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].KullaniciTuru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici[0].Cinsiyet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Kullanici) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogumTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KimlikNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullaniciTuru)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinsiyet)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

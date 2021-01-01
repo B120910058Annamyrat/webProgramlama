@@ -21,7 +21,8 @@ namespace proje.Models
         public DateTime DogumTarih { get; set; }
         public int KimlikNo { get; set; }
         public int KullaniciTuru { get; set; }
-        public byte[] Cinsiyet { get; set; }
+        
+        public bool? Cinsiyet { get; set; }
 
         public virtual ICollection<Bilet> Bilets { get; set; }
     }

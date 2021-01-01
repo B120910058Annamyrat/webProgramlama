@@ -1,0 +1,73 @@
+﻿@page
+@model proje.Pages.ius.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Kullanici</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Kullanici.Id" />
+            <div class="form-group">
+                <label asp-for="Kullanici.Ad" class="control-label"></label>
+                <input asp-for="Kullanici.Ad" class="form-control" />
+                <span asp-validation-for="Kullanici.Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.Soyad" class="control-label"></label>
+                <input asp-for="Kullanici.Soyad" class="form-control" />
+                <span asp-validation-for="Kullanici.Soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.Email" class="control-label"></label>
+                <input asp-for="Kullanici.Email" class="form-control" />
+                <span asp-validation-for="Kullanici.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.TelNo" class="control-label"></label>
+                <input asp-for="Kullanici.TelNo" class="form-control" />
+                <span asp-validation-for="Kullanici.TelNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.Password" class="control-label"></label>
+                <input asp-for="Kullanici.Password" class="form-control" />
+                <span asp-validation-for="Kullanici.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.DogumTarih" class="control-label"></label>
+                <input asp-for="Kullanici.DogumTarih" class="form-control" />
+                <span asp-validation-for="Kullanici.DogumTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.KimlikNo" class="control-label"></label>
+                <input asp-for="Kullanici.KimlikNo" class="form-control" />
+                <span asp-validation-for="Kullanici.KimlikNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.KullaniciTuru" class="control-label"></label>
+                <input asp-for="Kullanici.KullaniciTuru" class="form-control" />
+                <span asp-validation-for="Kullanici.KullaniciTuru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kullanici.Cinsiyet" class="control-label"></label>
+                <input asp-for="Kullanici.Cinsiyet" class="form-control" />
+                <span asp-validation-for="Kullanici.Cinsiyet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+

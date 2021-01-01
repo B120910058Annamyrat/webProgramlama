@@ -1,18 +1,12 @@
 ﻿@page
-@model proje.Pages.konumlar.CreateModel
+@model proje.Areas.Admin.Pages.Konumlar.CreateModel
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
+<h2>Create</h2>
 
 <h4>Konum</h4>
 <hr />
@@ -27,8 +21,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Konum.UstKonumId" class="control-label"></label>
-                <select asp-for="Konum.UstKonumId" class="form-control" asp-items="ViewBag.UstKonumId">
-                    <option selected="selected" value="">Bir tanesini sec</option>
+                <select asp-for="Konum.UstKonumId" class ="form-control" asp-items="ViewBag.UstKonumId">
+                    <option selected="selected">Istediginiz bir tanesini seciniz</option>
                 </select>
             </div>
             <div class="form-group">
@@ -42,8 +36,3 @@
     <a asp-page="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-</body>
-</html>

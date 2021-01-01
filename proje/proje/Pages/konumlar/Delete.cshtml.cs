@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Pages.konumlar
+namespace proje.Areas.Admin.Pages.Konumlar
 {
     public class DeleteModel : PageModel
     {

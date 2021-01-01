@@ -5,6 +5,58 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\areasWWWROOT\css\perfect-scrollbar.css" />
+    <None Include="wwwroot\areasWWWROOT\css\style.css" />
+    <None Include="wwwroot\areasWWWROOT\css\style.css.map" />
+    <None Include="wwwroot\areasWWWROOT\js\custom.min.js" />
+    <None Include="wwwroot\areasWWWROOT\js\dashboard\analytics.js" />
+    <None Include="wwwroot\areasWWWROOT\js\dashboard\dashboard-1.js" />
+    <None Include="wwwroot\areasWWWROOT\js\deznav-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-compact-nav.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-dark.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-fixed-header.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-fixed-nav.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-full-nav.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-light.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-mini-nav.js" />
+    <None Include="wwwroot\areasWWWROOT\js\layout-rtl.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\bootstrap-multiselect-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\bootstrap-tagsinput-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\bootstrap-touchpin-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\bs-daterange-picker-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\chartist-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\chartjs-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\clock-picker-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\color-picker-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\counter-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\datatables.init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\flot-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\fullcalendar-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\jquery-asColorPicker.init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\jquery-steps-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\jquery.validate-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\jqvmap-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\material-date-picker-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\morris-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\nestable-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\nouislider-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\pickadate-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\piety-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\select2-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\sparkline-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\summernote-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\sweetalert-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\sweetalert.init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\toastr-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\plugins-init\widgets-script-init.js" />
+    <None Include="wwwroot\areasWWWROOT\js\settings.js" />
+    <None Include="wwwroot\areasWWWROOT\js\styleSwitcher.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SQLServer" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
@@ -13,6 +65,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Pages\Seferler\" />
   </ItemGroup>
 
 </Project>

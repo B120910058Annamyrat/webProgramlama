@@ -1,18 +1,12 @@
 ﻿@page
-@model proje.Pages.konumlar.DetailsModel
+@model proje.Areas.Admin.Pages.Konumlar.DetailsModel
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
+<h2>Details</h2>
 
 <div>
     <h4>Konum</h4>
@@ -36,5 +30,3 @@
     <a asp-page="./Edit" asp-route-id="@Model.Konum.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
-</body>
-</html>

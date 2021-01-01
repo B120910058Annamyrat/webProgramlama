@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using proje.Models;
 
-namespace proje.Pages.konumlar
+namespace proje.Areas.Admin.Pages.Konumlar
 {
     public class CreateModel : PageModel
     {

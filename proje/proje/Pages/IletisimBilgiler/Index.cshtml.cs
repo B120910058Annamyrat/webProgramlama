@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Pages.Seferler
+namespace proje.Pages.IletisimBilgiler
 {
     public class IndexModel : PageModel
     {
@@ -18,14 +18,11 @@ namespace proje.Pages.Seferler
             _context = context;
         }
 
-        public IList<Sefer> Sefer { get;set; }
+        public IList<IletisimBilgileri> IletisimBilgileri { get;set; }
 
         public async Task OnGetAsync()
         {
-            Sefer = await _context.Sefers
-                .Include(s => s.Havaliman)
-                .Include(h => h.Konum)
-                .Include(s => s.Ucak).ToListAsync();
+            IletisimBilgileri = await _context.IletisimBilgileris.ToListAsync();
         }
     }
 }

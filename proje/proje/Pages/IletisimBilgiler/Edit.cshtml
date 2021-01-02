@@ -1,0 +1,42 @@
+﻿@page
+@model proje.Pages.IletisimBilgiler.EditModel
+
+@{
+    ViewData["Title"] = "İletişim Bilgi Güncelle";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>İletişim Bilgi Güncelle</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IletisimBilgileri.Id" />
+            <div class="form-group">
+                <label asp-for="IletisimBilgileri.Konum" class="control-label"></label>
+                <input asp-for="IletisimBilgileri.Konum" class="form-control" />
+                <span asp-validation-for="IletisimBilgileri.Konum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IletisimBilgileri.Eposta" class="control-label"></label>
+                <input asp-for="IletisimBilgileri.Eposta" class="form-control" />
+                <span asp-validation-for="IletisimBilgileri.Eposta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IletisimBilgileri.TelNo" class="control-label"></label>
+                <input asp-for="IletisimBilgileri.TelNo" class="form-control" />
+                <span asp-validation-for="IletisimBilgileri.TelNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kayıt" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Geri Dön</a>
+</div>
+

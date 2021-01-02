@@ -1,0 +1,67 @@
+﻿@page
+@model proje.Pages.SeferListeleModel
+
+@{
+    ViewData["Title"] = "SeferListele";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>SeferListele</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sefer[0].InisYeri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sefer[0].SeferTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sefer[0].YolcuSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sefer[0].Havaliman)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sefer[0].Konum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sefer[0].Ucak)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sefer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InisYeri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeferTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YolcuSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Havaliman.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konum.Konum1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ucak.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

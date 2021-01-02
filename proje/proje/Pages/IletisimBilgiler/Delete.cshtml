@@ -1,0 +1,40 @@
+﻿@page
+@model proje.Pages.IletisimBilgiler.DeleteModel
+
+@{
+    ViewData["Title"] = "İletişim Bilgisi Sil";
+    Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Iletisim Bilgisini Sil</h2>
+
+<h3>Iletisim bilgisini silmek istediginizi eminmisiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Adres Bilgisi
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IletisimBilgileri.Konum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IletisimBilgileri.Eposta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IletisimBilgileri.Eposta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IletisimBilgileri.TelNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IletisimBilgileri.TelNo)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="IletisimBilgileri.Id" />
+        <input type="submit" value="Sil" class="btn btn-default" /> |
+        <a asp-page="./Index">Geri Dön</a>
+    </form>
+</div>

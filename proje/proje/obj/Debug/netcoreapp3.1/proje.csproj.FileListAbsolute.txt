@@ -240,3 +240,11 @@ C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\R
 C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\Ucaklars\Delete.cshtml.g.cs
 C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\Ucaklars\Edit.cshtml.g.cs
 C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\Ucaklars\Index.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\Iletiisimbilgi.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\IletisimBilgiler\Create.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\IletisimBilgiler\Delete.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\IletisimBilgiler\Edit.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\IletisimBilgiler\Index.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\SeferListele.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\_InisYeriPartial.cshtml.g.cs
+C:\Users\mmuha\source\repos\webProgramlama\proje\proje\obj\Debug\netcoreapp3.1\Razor\Pages\_KalkisYeriPartial.cshtml.g.cs

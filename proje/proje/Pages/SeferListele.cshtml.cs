@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using proje.Models;
 
-namespace proje.Pages.Seferler
+namespace proje.Pages
 {
-    public class IndexModel : PageModel
+    public class SeferListeleModel : PageModel
     {
         private readonly proje.Models.PlaneVeriContext _context;
 
-        public IndexModel(proje.Models.PlaneVeriContext context)
+        public SeferListeleModel(proje.Models.PlaneVeriContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace proje.Pages.Seferler
         {
             Sefer = await _context.Sefers
                 .Include(s => s.Havaliman)
-                .Include(h => h.Konum)
+                .Include(s => s.Konum)
                 .Include(s => s.Ucak).ToListAsync();
         }
     }

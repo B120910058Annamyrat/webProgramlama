@@ -1,8 +1,8 @@
 ﻿@page
-@model proje.Pages.Seferler.IndexModel
+@model proje.Pages.IletisimBilgiler.IndexModel
 
 @{
-    ViewData["Title"] = "Seferler";
+    ViewData["Title"] = "Iletisim Bilgileri";
     Layout = "~/Areas/Admin/Pages/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -16,8 +16,8 @@
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a asp-area="Admin" asp-page="/Index">Ana Sayfa</a></li>
-                <li class="breadcrumb-item active"><a href="/seferler/Index">@ViewData["Title"]</a></li>
-                <li class="breadcrumb-item"><a asp-page="./Create" style="position:absolute;right:0;">Sefer Ekle</a></li>
+                <li class="breadcrumb-item active"><a href="/IletisimBilgiler/Index">@ViewData["Title"]</a></li>
+                <li class="breadcrumb-item"><a asp-page="./Create" style="position:absolute;right:0;">Iletisim Bilgileri Ekle</a></li>
             </ol>
         </div>
     </div>
@@ -29,31 +29,23 @@
                         <table class="table table-sm mb-0 table-striped">
                             <thead>
                                 <tr>
-                                    <th>Sefer Tarihi</th>
-                                    <th>Kalkış Yeri</th>
-                                    <th>İniş Yeri</th>
-                                    <th>Havaliman Adı</th>
-                                    <th>Uçak Adı</th>
+                                    <th>Adres Bilgisi</th>
+                                    <th>Eposta Bilgisi</th>
+                                    <th>Telefon Bilgisi</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody id="customers">
-                                @foreach (var item in Model.Sefer)
+                                @foreach (var item in Model.IletisimBilgileri)
                                 {
                                     <tr class="btn-reveal-trigger">
                                         <td class="py-3">
-                                            @Html.DisplayFor(modelItem => item.SeferTarihi)
-                                        </td>
-                                        <td class="py-2">
-                                            @item.Konum.Konum1
+                                            @Html.DisplayFor(modelItem => item.Konum)
                                         </td>
                                         <td class="py-3">
-                                            @item.Konum.Konum1
+                                            @Html.DisplayFor(modelItem => item.Eposta)
                                         </td>
-                                        <td class="py-3">
-                                            @Html.DisplayFor(modelItem => item.Havaliman.Ad)
-                                        </td>
-                                        <td class="py-2">  @Html.DisplayFor(modelItem => item.Ucak.Ad)</td>
+                                        <td class="py-2">@Html.DisplayFor(modelItem => item.TelNo)</td>
 
                                         <td class="py-2 text-right">
                                             <div class="dropdown">

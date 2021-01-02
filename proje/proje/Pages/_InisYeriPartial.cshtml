@@ -1,0 +1,10 @@
+﻿@page
+@model proje.Pages.user._InisYeriPartialModel
+
+
+<select class="cs-select cs-skin-border">
+    @foreach (var item in Model.Konum)
+    {
+        <option value="@item.Id">@item.Konum1</option>
+    }
+</select>
